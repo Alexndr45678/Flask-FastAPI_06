@@ -45,7 +45,6 @@ async def update_user(id: int, user: UserIn):
             password=user.password,
         )
     )
-    # user_ = await database.fetch_one(query)
     result = await database.execute(query)
     if result:
         return {**user.dict(), "id": id}
